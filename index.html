@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankit Kumar</title>
+  <link rel="icon" type="image/png" href="ankit.jpg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+
+</head>
+
+<body>
+
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>Ankit Portfolio</h1>
+      </div>
+      <!-- Hamburger Menu for mobile -->
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home-section"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#education-section"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#skills-section"><i class="fas fa-laptop-code"></i> Skills</a></li>
+        <li><a href="#projects-section"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#experience-section"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#contact-section"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </nav>
+    <!-- Sliding Menu -->
+    <div class="side-menu" id="sideMenu">
+      <ul class="side-nav-links">
+        <li><a href="#home-section"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#education-section"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#skills-section"><i class="fas fa-laptop-code"></i> Skills</a></li>
+        <li><a href="#projects-section"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#experience-section"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#contact-section"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <!-- Your content here -->
+    <div id="home-section">
+      <div class="container">
+        <img src="front.avif" alt="Ankit Kumar" class="profile-image">
+        <h1 class="name">Hello, I’m Ankit Kumar</h1>
+        <p class="bio">I am a Full-Stack Developer, passionate about creating innovative web solutions. Welcome to my
+          portfolio.</p>
+        <button class="cta-button">Download CV</button>
+      </div>
+    </div>
+
+    <section class="about-section" id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-image-container">
+          <img src="ankit.jpg" alt="Ankit Kumar" class="about-image">
+        </div>
+        <div class="about-text">
+          <p class="about-intro">
+            My name is <span class="highlight">Ankit Kumar</span>, and I am a Full Stack Developer with a deep passion
+            for technology and innovation. Currently, I am pursuing a Diploma in Electronics Engineering, which further
+            enhances my problem-solving skills in both programming and electronics.
+          </p>
+          <p class="about-intro">
+            Hailing from <span class="highlight">Bihar, Patna</span>, I am dedicated to using my technical expertise to
+            create impactful solutions that address real-world challenges. Whether it's building dynamic web
+            applications or exploring cutting-edge electronics, I am always striving to learn, innovate, and contribute
+            to the ever-evolving tech landscape.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="education-section">
+      <div class="education-container">
+        <h2 class="education-title">EDUCATION</h2>
+
+        <div class="education-item">
+          <div class="education-image">
+            <li><i class="fa-solid fa-school education-icon"></i> 10th Grade</li>
+          </div>
+          <div class="education-details">
+            <h3 class="education-degree">10th Grade</h3>
+            <p class="education-school">Sun Shine Residency Global School (CBSE Board), Bihar, Patna</p>
+            <p class="education-year">Year: Completed in 2023</p>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-image">
+            <li><i class="fa-solid fa-graduation-cap education-icon"></i> Diploma in Electronics Engineering</li>
+          </div>
+          <div class="education-details">
+            <h3 class="education-degree">Diploma in Electronics Engineering</h3>
+            <p class="education-school">New Government Polytechnic, Patna-13</p>
+            <p class="education-year">Session: 2023-2026</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills-section">
+      <h2 class="skills-title">SKILLS</h2>
+      <div class="skills-container">
+
+        <!-- Front-End Card -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Front-End</h3>
+          <div class="skill-card-content">
+            <ul class="skill-list">
+              <li><i class="fab fa-html5 skill-icon"></i> HTML</li>
+              <li><i class="fab fa-css3-alt skill-icon"></i> CSS</li>
+              <li><i class="fab fa-js-square skill-icon"></i> JavaScript</li>
+              <li><i class="fab fa-react skill-icon"></i> React.js</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Back-End Card -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Back-End</h3>
+          <div class="skill-card-content">
+            <ul class="skill-list">
+              <li><i class="fab fa-python skill-icon"></i> Python</li>
+              <li><i class="fab fa-cuttlefish skill-icon"></i> C++</li>
+              <li><i class="fab fa-php skill-icon"></i> PHP</li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Software Known Card -->
+        <div class="skill-card">
+          <h3 class="skill-card-title">Software Known</h3>
+          <div class="skill-card-content">
+            <ul class="skill-list">
+              <li><i class="fa-solid fa-code skill-icon"></i> VS Code</li>
+              <li><i class="fab fa-github skill-icon"></i> GitHub</li>
+              <li><i class="fa-solid fa-fire skill-icon"></i> Firebase</li>
+              <li><i class="fa-solid fa-laptop skill-icon"></i> Arduino IDE</li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="projects-section">
+      <div class="projects-container">
+        <h2 class="projects-title">PROJECTS</h2>
+
+        <!-- Software Projects -->
+        <div class="projects-category">
+          <h3 class="projects-category-title">Software Projects</h3>
+          <div class="projects-grid">
+            <!-- Project Card -->
+            <div class="project-card">
+              <img src="thesensors.png" alt="Electronics Projects Portfolio" class="project-image">
+              <h4 class="project-title">Electronics Projects Portfolio</h4>
+              <p class="project-description">A curated collection of innovative electronics projects.</p>
+              <a href="https://thesensors.github.io/thesensors/index.html" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt visit-icon"></i> Visit
+              </a>
+            </div>
+            <div class="project-card">
+              <img src="tic.png" alt="Tic Tac Toe Game" class="project-image">
+              <h4 class="project-title">Tic Tac Toe Game</h4>
+              <p class="project-description">A simple game built using Python and a graphical interface.</p>
+              <a href="https://ankitdev768.github.io/TicTacToe/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt visit-icon"></i> Visit
+              </a>
+
+            </div>
+            <div class="project-card">
+              <img src="login.png" alt="Login and Signup System" class="project-image">
+              <h4 class="project-title">Login and Signup System</h4>
+              <p class="project-description">Secure authentication system integrated with Firebase.</p>
+              <a href="https://ankitdev768.github.io/Login/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt visit-icon"></i> Visit
+              </a>
+            </div>
+            <div class="project-card">
+              <img src="jarvis.webp" alt="Virtual Assistant" class="project-image">
+              <h4 class="project-title">Virtual Assistant</h4>
+              <p class="project-description">A Python-powered assistant for task automation.</p>
+              <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt visit-icon"></i> Visit
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hardware Projects -->
+        <div class="projects-category">
+          <h3 class="projects-category-title">Hardware Projects</h3>
+          <div class="projects-grid">
+            <!-- Project Card -->
+            <div class="project-card">
+              <img src="car.webp" alt="Multifunctional Robot Car" class="project-image">
+              <h4 class="project-title">Multifunctional Robot Car</h4>
+              <p class="project-description">An autonomous vehicle with obstacle detection and control.</p>
+
+            </div>
+            <div class="project-card">
+              <img src="rover.jpeg" alt="Space Rover" class="project-image">
+              <h4 class="project-title">Space Rover</h4>
+              <p class="project-description">A rover designed for extraterrestrial exploration.</p>
+
+            </div>
+            <div class="project-card">
+              <img src="home.jpg" alt="Home Automation System" class="project-image">
+              <h4 class="project-title">Home Automation System</h4>
+              <p class="project-description">Control appliances using ESP32 and a mobile app.</p>
+
+            </div>
+            <div class="project-card">
+              <img src="device.png" alt="Women Safety Device" class="project-image">
+              <h4 class="project-title">Women Safety Device</h4>
+              <p class="project-description">A device ensuring safety through live tracking and alerts.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="experience-section">
+      <div class="experience-container">
+        <h2 class="experience-title">Experience</h2>
+
+        <!-- Internship Section -->
+        <div class="experience-card">
+          <div class="experience-content">
+            <h3 class="experience-subtitle">Internship</h3>
+            <p class="experience-description">
+              Gained hands-on experience in PLC programming and IoT applications, working on industrial automation
+              projects.
+            </p>
+          </div>
+          <div class="experience-image-container">
+            <img src="plc.jpg" alt="PLC and IoT Internship" class="experience-image">
+          </div>
+        </div>
+
+        <!-- Workshop Section -->
+        <div class="experience-card">
+          <div class="experience-content">
+            <h3 class="experience-subtitle">Workshops</h3>
+            <p class="experience-description">
+              Attended workshops on Nanotechnology, Artificial Intelligence, and Machine Learning at IIT Patna,
+              exploring cutting-edge technologies and practical applications.
+            </p>
+          </div>
+          <div class="experience-image-container">
+            <img src="nanotech.jpg" alt="Workshops at IIT Patna" class="experience-image">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact-section">
+      <div class="contact-container">
+        <h2 class="contact-title">Contact Me</h2>
+
+        <!-- Contact Card -->
+        <div class="contact-card">
+          <form action="#" method="post" class="contact-form" id="contactForm">
+            <div class="alert" style="display: none;">Your message has been successfully submitted. We will get back to
+              you shortly.</div>
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" placeholder="Your name...." required />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="emailid" placeholder="Your Email....." required />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-comment-alt"></i>
+              <textarea id="msgContent" cols="30" rows="10" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-social">
+          <a href="https://www.instagram.com/editwithankit/?igsh=aGo4M3ZlNWRqd3I3" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ankit-kumar-9a0957313/" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Ankitdev768" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:ak1522667@gmail.com" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+
+        </div>
+        <p class="footer-text">
+          &copy; 2025 Ankit Kumar. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+
+  </main>
+
+  <script type="module" src="contact.js"></script>
+  <script src="mode.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
